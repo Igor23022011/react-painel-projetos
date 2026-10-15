@@ -2,10 +2,10 @@ import Secao from './components/Secao'
 import Badge from './components/StatusBadge'
 import ProjetoCard from './components/ProjetoCard'
 import TecnologiaTag from './components/TecnologiaTag'
+import Resumo from './components/Resumo'
 import './App.css'
 
-const total = projetos.length;
-const concluidos = projetos.filter((projeto) => projeto.status === "Concluído").length;
+
 
 const projetos = [
   {id: 1,
@@ -23,7 +23,7 @@ const projetos = [
     descricao: "Site com publicação e categorização de matérias",
     responsavel: "Bruno",
     status: "Em desenvolvimento...",
-    tecnologias: ["React", "Express"],
+    tecnologias: ["React", "Express", "Docker"],
     destaque: false
   },
 
@@ -65,12 +65,23 @@ const projetos = [
     status: "Em Desenvolvimento...",
     tecnologias: ["Arduino", "MQTT", "Node.js"],
     destaque: false
+  },
+
+  {
+  id: 7,
+  titulo: "Agenda Escolar",
+  descricao: "Calendário de provas e entregas da turma.",
+  responsavel: "Gabriela",
+  status: "Concluído!!",
+  tecnologias: ["React", "Firebase"],
+  destaque: false
   }
 ]
     
 
-  
-
+const total = projetos.length;
+const concluidos = projetos.filter((projeto) => projeto.status === "Concluído!!").length;
+const emDesenvolvimento = projetos.filter((projeto) => projeto.status === "Em Desenvolvimento...").length
 
 
 function App() {
@@ -78,6 +89,12 @@ function App() {
 
   return (
     <>
+      <Resumo
+        total={total}
+        concluidos={concluidos}
+        emDesenvolvimento={emDesenvolvimento}
+      />
+
       <Secao titulo="Projetos da turma">
         {projetos.map((projeto) => (
           <ProjetoCard

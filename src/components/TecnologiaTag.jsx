@@ -1,7 +1,5 @@
-function TecnologiaTag({nome}){
-    return<>
-    <p>Aprendizado: {nome}</p>
-    </>
+function TecnologiaTag({ nome }) {
+  return <span className="tag">{nome}</span>;
 }
 
-export default TecnologiaTag
+export default TecnologiaTag;

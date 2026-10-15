@@ -1,10 +1,10 @@
-function Secao({titulo, children}) {
-    return<>
-        <section>
-            <h2>{titulo}</h2>
-            <div>{children}</div>
-        </section>
-    </>
+function Secao({ titulo, children }) {
+  return (
+    <section className="secao">
+      <h2>{titulo}</h2>
+      <div className="secao__lista">{children}</div>
+    </section>
+  );
 }
 
-export default Secao
+export default Secao;
